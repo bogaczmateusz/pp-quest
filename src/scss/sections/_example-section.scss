@@ -1,0 +1,12 @@
+.example-section {
+  &-content > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc((745 / 1440) * 100vw);
+    min-height: em(900px);
+    border-radius: em(8px);
+    background-color: $gray;
+  }
+}

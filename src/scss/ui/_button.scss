@@ -1,0 +1,37 @@
+.button {
+  position: relative;
+  @extend .font-primary;
+  font-size: em(14px);
+  font-weight: 600;
+  color: $white;
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  padding: em(13px, 14px) em(24px, 13px);
+  border-radius: em(12px, 14px);
+  cursor: pointer;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  background: $brown;
+  background: linear-gradient(90deg, rgba($brown, 1) 0%, rgba($brown-light, 1) 100%);
+
+  &-label {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: em(85px, 14px);
+    height: em(85px, 14px);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    background: radial-gradient(circle, rgb(244, 177, 126) 0%, rgba(244, 177, 126, 0) 80%);
+  }
+}

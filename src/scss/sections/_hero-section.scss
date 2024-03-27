@@ -1,0 +1,130 @@
+.hero-section {
+  &-content {
+    position: relative;
+  }
+
+  &-columns {
+    display: flex;
+  }
+
+  &-column {
+    flex: 1;
+    min-width: 0;
+
+    &.is-text {
+      display: flex;
+      justify-content: center;
+    }
+
+    &.is-media {
+      width: calc((740 / 1280) * 100%);
+      flex: 0 0 calc((740 / 1280) * 100%);
+    }
+  }
+
+  &-headline {
+    font-weight: 500;
+  }
+
+  &-subline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: calc((224 / 1440) * 100vw);
+    font-weight: 600;
+    line-height: calc((190 / 1440) * 100vw);
+  }
+
+  &-media {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: calc((505 / 740) * 100%);
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transform: translateY(var(--maskTransformY, 0));
+      background-color: $white;
+    }
+
+    > span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 110%;
+
+      > img,
+      > svg,
+      > picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: em(24px);
+    width: em(305px);
+    max-width: 100%;
+    padding: calc((125 / 1440) * 100vw) 0 0 0;
+  }
+
+  /* MEDIA QUERIES */
+
+  @media (max-width: 991px) {
+    &-text {
+      padding-top: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &-columns {
+      display: block;
+    }
+
+    &-column {
+      width: 100%;
+
+      &.is-text {
+        display: block;
+      }
+
+      &.is-media {
+        width: 85%;
+      }
+    }
+
+    &-text {
+      padding: 0 0 em(35px) 0;
+    }
+
+    &-media {
+      margin-left: auto;
+    }
+
+    &-subline {
+      left: auto;
+      right: 0;
+    }
+  }
+}
